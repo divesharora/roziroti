@@ -17,6 +17,7 @@
     <div class="mobile_nav">
       <div class="nav_bar">
         <img src="/assets/1.webp" class="mobile_profile_image" alt="">
+        <a href="/" class="a" style="background: transparent; text-decoration: none;"><h1>RoziRoti</h1></a>
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
@@ -33,7 +34,7 @@
     <!--sidebar start-->
     <div class="sidebar">
       <div class="profile_info">
-        <a href="/" class="a" style="background: transparent;"><h1>rozgaar</h1></a>
+        <a href="/" class="a" style="background: transparent;"><h1>RoziRoti</h1></a>
         <img src="/assets/1.webp" class="profile_image" alt="profile_image">
         
         <h4><%=currentUser.username%></h4>
@@ -45,11 +46,12 @@
       <a href="/#contact" class="contact"><i class="fas fa-id-card-alt"></i><span>Contact Us</span></a>
       <a href="/about" class="about"><i class="fas fa-info-circle"></i><span>About</span></a>
       <a href="/logout" class=" logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
-      <p> Copyright © 2020 Rozgaar.</p>
+      <p> Copyright © 2020 RoziRoti.</p>
     </div>
     <!--sidebar end-->
 
     <div class="content">
+      <h2 class="lj">Listed Jobs</h2>
       <div style="width:90%;margin-left:5% ;margin-right: auto; ">
         <ul>
           <% jobs.forEach(function(job){
@@ -73,7 +75,7 @@
           <li class="booking-card" style="background-image: url(/assets/<%= pic %>);">
             <div class="book-container">
               <div class="content1">
-                <a type='button' class="btn" href="/dash/<%= job._id %>/applicants">View Applicants</a>
+                <a type='button' class="btn" href="/dash/<%= job._id %>/applicants" style="text-decoration: none;">View Applicants</a>
               
               </div>
             </div>

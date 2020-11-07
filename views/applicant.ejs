@@ -5,10 +5,11 @@
         <link rel="stylesheet" href="/css/applicant.css">
         <link rel="icon" type="image/svg" href="/assets/ico.png">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
     </head>
     <body onload="load()">
         <div class="left">
-            <a href="/"><h1>Rozgaar</h1></a>
+            <a href="/"><h1>RoziRoti</h1></a>
             <h2>Applicant Details</h2>
            <div class="list">
             <h3>Job Name: <%= job.jname %></h3><br>
@@ -19,25 +20,35 @@
            </div>
         </div>
         <div class="right">
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>City</th>
-                    <th>Contact No.</th>
-                </tr>
-                <% job.applicants.forEach(function(applicant){ %>
-                    <tr>
-                        <td><%= applicant.name %></td>
-                        <td><%= applicant.age %></td>
-                        <td><%= applicant.city %></td>
-                        <td><%= applicant.contact %></td>
-        
-                    </tr>
-        
-               <% }) %>
-
-            </table>
+            <h2 id="h"> List of Applicants</h2>
+            <div id="workers">
+                <table >
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>City</th>
+                            <th>Contact No.</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <% job.applicants.forEach(function(applicant){ %>
+                            <tr>
+                                <td><%= applicant.name %></td>
+                                <td><%= applicant.age %></td>
+                                <td><%= applicant.city %></td>
+                                <td><%= applicant.contact %></td>
+                
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            
+            <br>
+            <br>
+            <button onclick="download()">Download as PDF</button>
         </div>
     </body>
     <script>
@@ -45,6 +56,37 @@
             $('.left').css('height','100%');
             $('.left').css('transition','1.9s');
         }
-        
+
+        function download() {
+                    var pdf = new jsPDF('p', 'pt', 'letter');
+                    source = $('#workers')[0];
+                    source1=$('.list')[0];
+                    console.log(source1);
+                    specialElementHandlers = {
+                        '#bypassme': function(element, renderer,element1,renderer1) {
+                            return true
+                        }
+                    };
+                    margins = {
+                        top: 80,
+                        bottom: 60,
+                        left: 40,
+                        width: 522
+                    };
+    
+                    pdf.fromHTML(
+                            source,
+                            margins.left, 
+                            margins.top, {
+                                'width': margins.width, 
+                                'elementHandlers': specialElementHandlers
+                            },
+                    function(dispose) {
+                        pdf.save('applicants.pdf');
+                    }
+                    , margins);
+                }
     </script>
+
+   
 </html>
