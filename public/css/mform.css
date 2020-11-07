@@ -31,7 +31,8 @@
     display: inline-block;
   }
   
-  input[type=submit] {
+ 
+  button{
     background-color: #272e4f;
     color: white;
     padding: 12px 20px;
@@ -41,7 +42,7 @@
     float: right;
   }
   
-  input[type=submit]:hover {
+ button:hover {
     background-color: #ff5e3a;
   }
   
@@ -68,7 +69,7 @@
   }
   
   @media screen and (max-width: 600px) , screen and(max-height:250px) {
-    .col-25, .col-75, input[type=submit] {
+    .col-25, .col-75, button {
       width: 100%;
     }
 
