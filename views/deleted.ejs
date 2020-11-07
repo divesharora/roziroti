@@ -43,7 +43,6 @@
       <a href="/" class="home"><i class="fas fa-home"></i><span>Home</span></a>
       <a href="/search" class="search"><i class="fas fa-search"></i><span>Search Jobs</span></a>
       <a href="/listnew" class="add"><i class="fas fa-plus"></i><span>Add Job</span></a>
-      <a href="/listnew" class="add"><i class="fas fa-plus"></i><span>Add Job</span></a>
       <a href="/#contact" class="contact"><i class="fas fa-id-card-alt"></i><span>Contact Us</span></a>
       <a href="/delete" class="contact"><i class="fas fa-trash"></i><span>Delete Job</span></a>
       <a href="/about" class="about"><i class="fas fa-info-circle"></i><span>About</span></a>
@@ -53,78 +52,20 @@
     <!--sidebar end-->
 
     <div class="content">
-      <h2 class="lj">Listed Jobs</h2>
-      <div style="width:90%;margin-left:5% ;margin-right: auto; ">
-        <ul>
-          <% jobs.forEach(function(job){
-            var pic;
-            if(job.jname=="Maid")
-            pic='maid.jpg';
-            else if(job.jname=="Sweeper")
-            pic='sweeper.png';
-            else if(job.jname=="Plumber")
-            pic='plumber.jpg';
-            else if(job.jname=="Driver")
-            pic='driver.jpg';
-            else if(job.jname=="electrician")
-            pic='elec.jpg';
-            else if(job.jname=="Cook")
-            pic='cook.jpg';
-            else 
-            pic='daily.jpg';
-  
-            %>
-          <li class="booking-card" style="background-image: url(/assets/<%= pic %>);">
-            <div class="book-container">
-              <div class="content1">
-                <a type='button' class="btn" href="/dash/<%= job._id %>/applicants" style="text-decoration: none;">View Applicants</a>
-              
-              </div>
+        <section id="loginss">
+
+            <div class="container">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jhgfgv8n.json"  background="transparent"  speed="0.5"  style="width: 500px; height: 200px; margin-left: 28%;margin-top: 15%;"  loop  autoplay></lottie-player>
+                <h1 style="margin-left: 30%;margin-top: 2%;">Your Job has been successfully deleted!!</h1>
             </div>
-            <div class="informations-container">
-              <h2 class="title"> <%=job.jname%></h2>
-              <p class="sub-title">Location:<%=job.location%></p><p>Gender:Male</p>
-              <p>Salary:<%=job.salary%> </p>
-              <p class="price">
-              <div class="more-information">
-                <p class="sub-title">Pincode: <%=job.pincode%></p>
-                <p class="disclaimer"><%=job.description%></p>
-                </div>
-            </div>
-          </li>
-      
-          <%
-        });%>
-      </ul>
-      </div>
+      </section>
     </div>
     
       
    
 
 
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $('.nav_btn').click(function(){
-        $('.mobile_nav_items').toggleClass('active');
-      });
-    });
-    </script>
-    <script>
-      var name = document.querySelector(".profile_info h4").textContent;
-      var flag =name.localeCompare('admin');
-      
-      if (flag != 0)
-      {
-          document.querySelector(".add").style.display='none';
-      }
-      
-      document.querySelector(".add").addEventListener('click', function(){
-          document.querySelector(".add").style.color="#f8bd7f";
-          document.querySelector(".add:hover").style.background="transparent";
-      })
-      
-      </script>
   </body>
 </html>
               
