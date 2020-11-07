@@ -1,0 +1,69 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/mform.css">
+    </head>
+    <script>
+        const softkeyCallback = {
+            left: function() {
+                console.log('You click on SoftLeft')
+            },
+            center: function() {
+                console.log('You click on Enter')
+            },
+            right: function() {
+                console.log('You click on SoftRight')
+            }
+        };
+    </script>
+    
+    <body>
+        <h1>Rozgaar</h1>
+        <p style="text-align: center;">Fill In Your Details</p>
+
+        <div class="container">
+        <form action="/mobile/<%=job._id%>/applied" method="POST">
+            <div class="row">
+            <div class="col-25">
+                <label for="fname">Name:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="applicant[name]" placeholder="Enter Your name">
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-25">
+                <label for="country">Age:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="applicant[age]" placeholder="Enter Your Age">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">City:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="applicant[city]" placeholder="Enter Your City">
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Phone Number:</label>
+                </div>
+                <div class="col-75">
+                <input type="text" id="fname" name="applicant[contact]" placeholder="Enter Your Mobile No">
+                </div>
+            </div>
+           
+            <div class="row">
+                <br>
+           <button>Submit</button>
+            </div>
+        </form>
+        </div>
+
+
+    </body>
+</html>

@@ -11,6 +11,7 @@ var Applicant=require('./models/applicant.js');
 var nodemailer = require('nodemailer');
 
 
+
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
@@ -215,3 +216,63 @@ app.get("/dash/:id/applicants",function(req,res){
 		else
 		res.render('applicant.ejs',{currentUser:req.user,job:foundjob})
 	})});
+
+	// mobile routes
+
+	app.get('/mpin',function(req,res){
+		res.render("mpin.ejs",{currentUser:req.user});
+	});
+
+	app.post('/mjob',function(req,res){
+		Job.find({'pincode':req.body.pincode},function(err,jobs){
+			if(err)
+			console.log(err);
+			else
+			res.render('mjob.ejs',{jobs:jobs});
+		});
+	});
+	app.post('/mform',function(req,res){
+		Job.findById(req.body.selectedjob,function(err,job){
+			if(err)
+			console.log(err);
+			else
+			res.render('mform.ejs',{job:job});
+		});
+	});
+	app.post('/mobile/:id/applied',function(req,res){
+		Job.findById(req.params.id,function(err,job){
+			if(err){
+				console.log(err);
+			}
+			else{
+				Applicant.create(req.body.applicant,function(err,applicant){
+					if(err)
+						console.log(err);
+					else
+						{
+							job.applicants.push(applicant);
+							job.save();
+							console.log(job.applicants);
+							var mailOptions = {
+								from: 'rozgaar833@gmail.com',
+								to:job.email ,
+								subject: 'Job Application Received',
+								text: 'Hi! .' + applicant.name +" just applied for your listed job. You can contact them at "+applicant.contact
+							  };
+							  transporter.sendMail(mailOptions, function(error, info){
+								if (error) {
+								  console.log(error);
+								} else {
+								  console.log('Email sent: ' + info.response);
+								}
+							  });
+
+								
+							res.render('mapplied.ejs',{currentUser:req.user})
+						}
+				});
+			
+			}
+		});
+	});
+	

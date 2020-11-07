@@ -1,0 +1,42 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/mform.css">
+    </head>
+    <script>
+        const softkeyCallback = {
+            left: function() {
+                console.log('You click on SoftLeft')
+            },
+            center: function() {
+                console.log('You click on Enter')
+            },
+            right: function() {
+                console.log('You click on SoftRight')
+            }
+        };
+    </script>
+    <body>
+        <h1>RoziRoti</h1>
+        <p>Select from the following jobs</p>
+        <form action="/mform" method="POST">
+            <div class="row">
+                <div class="col-25">
+                  <label for="jobs">Jobs:</label>
+                </div>
+                <div class="col-75">
+                    
+                  <select id="country" name="selectedjob">
+                    <% jobs.forEach(function(job){ %>
+                      <option value="<%=job._id%>"><%=job.jname%></option>
+                      <%});%>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <br><br>
+                <button>Submit</button>
+                </div>
+        </form>
+    </body>
+</html>

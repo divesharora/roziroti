@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f2f2f0;
+	scroll-behavior: smooth;
+  }
+
+  h1{
+      color: #272e4f;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: open Arial, Helvetica, sans-serif;
+  }
+  p{
+    text-align: center;
+    color: #ff5e3a;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border:none;
+    border-bottom: 1px solid #272e4f;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #272e4f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #ff5e3a;
+  }
+  
+  .container {
+    padding: 15px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 600px) , screen and(max-height:250px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+    }
+
+  }
+
+  @media screen and (max-width: 200px),screen and(max-height:250px) {
+    h1 {
+      font-size: 160%;
+      color: #272e4f;
+    }
+
+  }

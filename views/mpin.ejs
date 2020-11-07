@@ -1,0 +1,39 @@
+
+<html>
+    <head>
+    <link rel="stylesheet" href="/css/mform.css">
+    </head>
+</script>
+<script>
+    const softkeyCallback = {
+        left: function() {
+            console.log('You click on SoftLeft')
+        },
+        center: function() {
+            console.log('You click on Enter')
+        },
+        right: function() {
+            console.log('You click on SoftRight')
+        }
+    };
+</script>
+    <body>
+        <h1>RoziRoti</h1>
+        <p>Enter your Pincode</p>
+        <form action="/mjob" method="POST">
+            <div class="row">
+                <div class="col-25">
+                    <br><br>
+                    <label for="fname">Pincode:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="pincode" placeholder="Enter Your Pincode">
+                </div>
+                </div>
+                <div class="row">
+                    <br><br>
+                    <button>Submit</button>
+                </div>
+        </form>
+    </body>
+</html>
