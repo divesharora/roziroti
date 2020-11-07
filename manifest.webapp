@@ -4,7 +4,7 @@
   "description": "We all know the plight of migrant labourers post-COVID-19. A lot of the daily-wage-workers rushed to their homes in villages when the lockdown was instated. Now that these restrictions are being lifted, it's a real challenge for them to find employment. A lot of old businesses have been shut down and many others are running at a reduced capacity. Workers can use their simple 2G Feature Phones to register themselves on a nationwide database of workers actively seeking for employment by just sending a message.",
   "type": "web",
     "cursor":true,
-  "launch_path": "./views/mpin.ejs",
+  "launch_path": "https://roziroti.herokuapp.com/mpin",
   "developer": {
     "name": "Team Seal"
   },
@@ -14,7 +14,6 @@
   },
     
     
-  "type": "privileged",
   "permissions": {
     "spatialnavigation-app-manage": {
       "navigator.spatialNavigationEnabled": true
