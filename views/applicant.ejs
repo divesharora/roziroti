@@ -1,0 +1,50 @@
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/applicant.css">
+        <link rel="icon" type="image/svg" href="/assets/ico.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    </head>
+    <body onload="load()">
+        <div class="left">
+            <a href="/"><h1>Rozgaar</h1></a>
+            <h2>Applicant Details</h2>
+           <div class="list">
+            <h3>Job Name: <%= job.jname %></h3><br>
+            <h3>Salary: <%= job.salary %></h3><br>
+            <h3>Location:<%= job.location %></h3><br>
+            <h3>Pincode:<%= job.pincode %></h3><br><br>
+            <h4>Description: <%= job.description %></h4>
+           </div>
+        </div>
+        <div class="right">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Contact No.</th>
+                </tr>
+                <% job.applicants.forEach(function(applicant){ %>
+                    <tr>
+                        <td><%= applicant.name %></td>
+                        <td><%= applicant.age %></td>
+                        <td><%= applicant.city %></td>
+                        <td><%= applicant.contact %></td>
+        
+                    </tr>
+        
+               <% }) %>
+
+            </table>
+        </div>
+    </body>
+    <script>
+        function load(){
+            $('.left').css('height','100%');
+            $('.left').css('transition','1.9s');
+        }
+        
+    </script>
+</html>

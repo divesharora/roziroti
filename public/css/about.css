@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+
+h1{
+    font-family:open Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    color: white;
+    margin-left: 43%;
+    margin-right: 43%;
+    margin-top: 2%;
+    transition: 0.5s;
+}
+
+h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    display: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30%;
+    transition: 1s;
+    text-align: center;
+}
+
+h1:hover{
+    color: #ea5455;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 600;
+	color: #272343;
+	margin-top: 3%;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+.section-title span {
+	color: #b6baca;
+}
+.top{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background: url(/assets/about.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.8s;
+    background-position: 50% 50%
+}
+
+.top:hover{
+    background: url(/assets/about1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.top:hover h3{
+    display: block;
+    transition: 1s;
+}
+.bottom{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+}
+
+
+p {
+	color: #393b44;
+	font-size:16px;
+    margin-top: 2%;
+    margin-left:   15%;
+    margin-right: 15%;
+	text-align: justify;
+	font-weight: 500;
+	letter-spacing: .05rem;
+}
+
+
+.footer {
+    background:#272343;
+	min-height: 100px;
+	flex-direction: column;
+	margin-top: 80%;
+}
+.footer h2 {
+    color: white;
+    font-family:open Arial, Helvetica, sans-serif;
+	font-weight: 500;
+	font-size: 2.8rem;
+    padding: 2%;
+    margin-left: 43%;
+}
+
+.footer p {
+	color: white;
+    font-size: 1.3rem;
+    margin-left: 39%;
+}
+/* End Footer */
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
+
+	#services .service-bottom .service-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+}
+/* End  Media Query For Desktop */
+/*custom scroll bar */
+body::-webkit-scrollbar {
+    background-color: #a5d1d1;
+    width: 10px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color:none;
+}
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+	background: #ea5455;
+	transition: 12s;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background:#272343; 
+	border: 1px;
+	transition: 2.5s;
+}
+/*custom scroll bar ends here  */
+

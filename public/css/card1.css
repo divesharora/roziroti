@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "open sans", sans-serif;
+  }
+  
+  h2 {
+    color: #0a4870;
+    font-weight: 500;
+  }
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+  ul .booking-card {
+    position: relative;
+    width: 300px;
+    display: flex;
+    flex: 0 0 300px;
+    flex-direction: column;
+    margin: 20px;
+    margin-bottom: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    color: #0a4870;
+    transition: .3s;
+  }
+  ul .booking-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 72, 112, 0);
+    transition: .3s;
+  }
+  ul .booking-card .book-container {
+    height: 200px;
+  }
+  ul .booking-card .book-container .content1 {
+    position: relative;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform: translateY(-200px);
+    transition: .3s;
+  }
+  ul .booking-card .book-container .content1 .btn {
+    border: 3px solid white;
+    padding: 10px 15px;
+    background: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+  }
+  ul .booking-card .book-container .content1 .btn:hover {
+    background: white;
+    border: 0px solid white;
+    color: #0a4870;
+  }
+  ul .booking-card .informations-container {
+    flex: 1 0 auto;
+    padding: 20px;
+    border-top-left-radius:60px ;
+    border-top-right-radius:60px ;
+    background: #f0f0f0;
+    transform: translateY(206px);
+    transition: .3s;
+  }
+  ul .booking-card .informations-container .title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.8em;
+  }
+  ul .booking-card .informations-container .title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    width: 50px;
+    margin: auto;
+    background: #0a4870;
+  }
+  ul .booking-card .informations-container .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  ul .booking-card .informations-container .price .icon {
+    margin-right: 10px;
+  }
+  ul .booking-card .informations-container .more-information {
+    opacity: 0;
+    transition: .3s;
+  }
+  ul .booking-card .informations-container .more-information .info-and-date-container {
+    display: flex;
+  }
+  ul .booking-card .informations-container .more-information .info-and-date-container .box {
+    flex: 1 0;
+    padding: 15px;
+    margin-top: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: white;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+  ul .booking-card .informations-container .more-information .info-and-date-container .box .icon {
+    margin-bottom: 5px;
+  }
+  ul .booking-card .informations-container .more-information .info-and-date-container .box.info {
+    color: #ec992c;
+    margin-right: 10px;
+  }
+  ul .booking-card .informations-container .more-information .disclaimer {
+    margin-top: 20px;
+    font-size: 1.4em;
+    color: #7d7d7d;
+  }
+  ul .booking-card:hover::before {
+    background: rgba(6, 36, 56, 0.692);
+  }
+  ul .booking-card:hover .book-container .content1 {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  ul .booking-card:hover .informations-container {
+    transform: translateY(0px);
+  }
+  ul .booking-card:hover .informations-container .more-information {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    ul .booking-card::before {
+      background: rgba(10, 72, 112, 0.6);
+    }
+    ul .booking-card .book-container .content1 {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    ul .booking-card .informations-container {
+      transform: translateY(0px);
+    }
+    ul .booking-card .informations-container .more-information {
+      opacity: 1;
+    }
+  }
+  
+  

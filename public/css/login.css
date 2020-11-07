@@ -1,0 +1,143 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'open sans', sans-serif;
+  }
+  
+  body{
+	background: #ffffff;
+
+  }
+
+ 
+  
+  .wrapper{
+	display: flex;
+	max-width: 600px;
+	width: 1300px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+  }
+  
+  .wrapper .left,
+  .wrapper .right{
+	width: 50%;
+	height: 100%;
+	padding: 30px;
+  }
+  
+  .wrapper .left{
+	background: #272343;
+  }
+  
+  .wrapper .left h3{
+	text-align: center;
+	color: #ffffff;
+	margin-top: 20px;
+	font-size: 43px;
+	font-family: open Arial, Helvetica, sans-serif;
+  }
+  
+  .wrapper .left img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin-left: 5px;
+	margin-bottom: 150px;
+  }
+  
+  .wrapper .right{
+	background: #e3f6f5;
+  }
+  
+  .wrapper .right .tabs ul{
+	text-align: center;
+  }
+  
+  .wrapper .right .tabs ul li{
+	display: inline-block;
+	margin: 5px;
+	padding: 5px 10px;
+	font-size: 14px;
+	color: #272343;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+  }
+  
+  .wrapper .right .tabs ul li.active{
+	border-bottom: 2px solid #f8bd7f;
+  }
+  
+  .wrapper .right .register,
+  .wrapper .right .login{
+	margin-top: 20px;
+  }
+  
+  .wrapper .right .input_field{
+	margin-top: 45px;
+	margin-bottom: 15px;
+  }
+  
+  .wrapper .right .input_field .input{
+	width: 100%;
+	padding: 10px 15px;
+	font-size: 12px;
+	color:#707f86;
+	font-family: 'open sans' ,sans serif;
+	background: white;
+	border: 1px solid #bae8e8;
+  }
+  
+  .wrapper .right .btn{
+	margin-top: 15px;
+	background: #272343;
+	box-shadow: inset 0 0 0 0 #272343;
+	  transition: ease-out .6s;
+	padding: 10px;
+	color: white;
+	width: 100%;
+	border: none;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	cursor: pointer;
+	font-weight: 700px;
+  }
+  
+  
+  .wrapper .right .btn:hover{
+	box-shadow: inset 0 100px 0 0 #ea5455;
+	  transition: ease-out .6s;
+  }
+  /*custom scroll bar */
+  body::-webkit-scrollbar {
+	background-color: #a5d1d1;
+	width: 10px;
+  }
+  
+  /* background of the scrollbar except button or resizer */
+  body::-webkit-scrollbar-track {
+	background-color:none;
+  }
+  /* scrollbar itself */
+  body::-webkit-scrollbar-thumb {
+  background: #ea5455;
+  transition: 12s;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+	background:#272343; 
+  border: 1px;
+  transition: 2.5s;
+  }
+  /*custom scroll bar ends here  */
+  

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dash.css">
+    <link rel='stylesheet' href="/css/card1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+  
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="/assets/1.webp" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="/"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="/search"><i class="fas fa-search"></i><span>Search</span></a>
+        <a href="/addjob"><i class="fas fa-plus"></i><span>Add</span></a>
+        <a href="/#contact"><i class="fas fa-id-card-alt"></i><span>Contact Us</span></a>
+        <a href="/#about"><i class="fas fa-info-circle"></i><span>About</span></a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <a href="/" class="a" style="background: transparent;"><h1>rozgaar</h1></a>
+        <img src="/assets/1.webp" class="profile_image" alt="profile_image">
+        
+        <h4><%=currentUser.username%></h4>
+      </div>
+      <a href="/" class="home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="/search" class="search"><i class="fas fa-search"></i><span>Search</span></a>
+      <a href="/listnew" class="add"><i class="fas fa-plus"></i><span>Add</span></a>
+      <a href="/listnew" class="add"><i class="fas fa-plus"></i><span>Add</span></a>
+      <a href="/#contact" class="contact"><i class="fas fa-id-card-alt"></i><span>Contact Us</span></a>
+      <a href="/about" class="about"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="/logout" class=" logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+      <p> Copyright © 2020 Rozgaar.</p>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+      <div style="width:90%;margin-left:5% ;margin-right: auto; ">
+        <ul>
+          <% jobs.forEach(function(job){
+            var pic;
+            if(job.jname=="Maid")
+            pic='maid.jpg';
+            else if(job.jname=="Sweeper")
+            pic='sweeper.png';
+            else if(job.jname=="Plumber")
+            pic='plumber.jpg';
+            else if(job.jname=="Driver")
+            pic='driver.jpg';
+            else if(job.jname=="electrician")
+            pic='elec.jpg';
+            else if(job.jname=="Cook")
+            pic='cook.jpg';
+            else 
+            pic='daily.jpg';
+  
+            %>
+          <li class="booking-card" style="background-image: url(/assets/<%= pic %>);">
+            <div class="book-container">
+              <div class="content1">
+                <a type='button' class="btn" href="/dash/<%= job._id %>/applicants">View Applicants</a>
+              
+              </div>
+            </div>
+            <div class="informations-container">
+              <h2 class="title"> <%=job.jname%></h2>
+              <p class="sub-title">Location:<%=job.location%></p><p>Gender:Male</p>
+              <p>Salary:<%=job.salary%> </p>
+              <p class="price">
+              <div class="more-information">
+                <p class="sub-title">Pincode: <%=job.pincode%></p>
+                <p class="disclaimer"><%=job.description%></p>
+                </div>
+            </div>
+          </li>
+      
+          <%
+        });%>
+      </ul>
+      </div>
+    </div>
+    
+      
+   
+
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+    <script>
+      var name = document.querySelector(".profile_info h4").textContent;
+      var flag =name.localeCompare('admin');
+      
+      if (flag != 0)
+      {
+          document.querySelector(".add").style.display='none';
+      }
+      
+      document.querySelector(".add").addEventListener('click', function(){
+          document.querySelector(".add").style.color="#f8bd7f";
+          document.querySelector(".add:hover").style.background="transparent";
+      })
+      
+      </script>
+  </body>
+</html>
+              

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thanks</title>
+    <link rel="icon" type="image/svg" href="/assets/ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/applied.css">
+</head>
+<body>
+
+    <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/#hero"><h1><span>Rozgaar</h1></a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger"><div class="bar"></div></div>
+          <ul>
+            <li><a href="/#hero"  data-after="Home" style="color: #f8bd7f;">Home</a></li>
+            <li><a href="/#services"  data-after="Service">Services</a></li>
+            <li><a href="/search"  data-after="Projects">search</a></li>
+            <li><a href="/#about"  data-after="About">About</a></li>
+            <li><a href="/#contact"  data-after="Contact">Contact</a></li>
+            <% if(!currentUser){ %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Signup</a></li>
+              <%	} else { %>
+              <li><a href="/dash">Dashboard</a></li>
+              <%	} %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- login Section -->
+<section id="loginss">
+
+        <div class="container">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jhgfgv8n.json"  background="transparent"  speed="0.5"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            <h1>THANKS FOR APPLYING! <br> Your Response has been submitted </h1>
+        </div>
+
+
+  </section>
+  <!-- End login Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand"><h1>Rozgaar</h1></div>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png"/></a>
+        </div>
+      </div>
+      <p>Copyright © 2020 Rozgaar. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+
+  <script src="./search.js"></script>
+</body>
+</html>

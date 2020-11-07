@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg" href="/assets/ico.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <title>Home</title>
+</head>
+
+<body onload="animateValue()">
+
+  <!-- Header -->
+  <section id="header">
+    <div class="loader-container">
+      <div class="loader"></div><br><br>
+      <h1>Welcome to Rozgaar</h1>
+    </div>
+    <div class="header container">
+      
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero"><h1><span>Rozgaar</h1></a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger"><div class="bar"></div></div>
+          <ul>
+            <li><a href="#hero"  data-after="Home" style="color: #f8bd7f;">Home</a></li>
+            <li><a href="#services"  data-after="Service">Services</a></li>
+            <li><a href="/search"  data-after="Projects">search</a></li>
+            <li><a href="/about"  data-after="About">About</a></li>
+            <li><a href="#contact"  data-after="Contact">Contact</a></li>
+            <% if(!currentUser){ %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Signup</a></li>
+              <%	} else { %>
+              <li><a href="/dash">Dashboard</a></li>
+              <%	} %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+ 
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Welcome, To Rozgaar<span></span></h1>
+        <h2 class="work"></h2>
+        <!---iska link dusre page se linked ni hai same page wale aboutus pe jata hai-->
+        <a href="#about" type="button" class="cta">About us</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title">Serv<span>i</span>ces</h1>
+        <p>We all know the plight of migrant labourers post-COVID-19. A lot of the daily-wage-workers rushed to their homes in villages when the lockdown was instated. Now that these restrictions are being lifted, it's a real challenge for them to find employment. A lot of old businesses have been shut down and many others are running at a reduced capacity. Workers can use their simple 2G Feature Phones to register themselves on a nationwide database of workers actively seeking for employment by just sending a message.</p>
+      </div>
+      <a href="/search" class="link1"><h1>Click here to Search and Apply for Jobs</h1></a>
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+  
+
+  <!-- About Section -->
+  <a href="/about">
+    <section id="about">
+      <div class="about container">
+        <div class="col-right">
+          <h1 class="section-title">About <span>Us</span></h1>
+          <p>Rozgar is a humble app that aims to bring employment to the poorest of the poor of our country who don't have Whatsapp or Linkedin to search for jobs.</p>
+        </div>
+      </div>
+    </section>
+  </a>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div><h1 class="section-title">Get In <span>Touch</span></h1></div>
+      <div class="contact-items">
+
+              <div class="conleft">
+                <div class="contact-form">
+                    <form action="/" method='POST' onsubmit="return validatenoblank(); return validateemail();">
+                            <div class="col">
+                                <input type="text" class="form-control" id="uname" placeholder="Enter your name" name="name">
+                                <span></span><span>
+                                  <input type="email" name='email' class="form-control" id="uemail" placeholder="Enter your email address">
+                              </span>
+                            </div>
+                        <div class="contxt">
+                            <textarea class= "form-control" name='message' id="umessage" rows="10" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="conbtn">Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="conright">
+    
+              <div class="address">
+                  <h3>Address</h3>
+                  <p>Rozgaar Private Limited 7th Floor, 9A Building, DLF Tower 8th Rd, DLF CyberHub, Gurugram, Haryana, 122002, India</p>
+              </div>
+              <div class="cd">
+                  <ul class="fa-ul">
+                      <li><span class="fa-li"><i class="fas fa-mobile-alt"></i></span>0123 450 5000</li>
+                      <li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>9A, DLF Tower 8th Road, Gurugram, Haryana, 122002</li>
+                      <li><span class="fa-li"><i class="fas fa-paper-plane"></i></span>info@Rozgaar.com</li>
+                  </ul>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand"><h1>Rozgaar</h1></div>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://www.facebook.com/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.instagram.com/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.twitter.com/"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.behance.net/"><img src="https://img.icons8.com/bubbles/100/000000/behance.png"/></a>
+        </div>
+      </div>
+      <p>Copyright © 2020 Rozgaar. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script>
+    $(window).on("load",function(){
+    $(".loader-container").fadeToggle(2500);
+  });
+  </script>
+  <script src="./index.js"></script>
+  
+</body>
+</html>
+<script >// workers  so far
+  function animateValue( ) {
+    var end=5000;
+    fetch(" https://abhipadhy.github.io/rozgaar-api/rozgaar.json")
+                  .then(function(res){
+                    return res.json();
+                  })
+                  .then(function(data){
+                    end=data[0].latest;
+                    var start=0;
+      var duration=1000;
+      var range = end-start;
+      var current = start;
+      var increment = end > start? 1: -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var obj = document.querySelector(".work");
+      var timer = setInterval(function() {
+          current += increment;
+          obj.innerHTML = "Workers helped so far:  "+current+"+";
+          if (current == end) {
+              clearInterval(timer);
+          }
+      }, stepTime);
+                  
+                  
+                  });
+
+
+      
+      
+  }
+  
+   // nav bar
+  const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+  const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+  const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+  const header = document.querySelector('.header.container');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobile_menu.classList.toggle('active');
+  });
+  
+  document.addEventListener('scroll', () => {
+    var scroll_position = window.scrollY;
+    if (scroll_position > 150) {
+      header.style.backgroundColor = '#272343';
+      header.style.opacity = "0.9"
+    } else {
+      header.style.backgroundColor = 'transparent';
+    }
+  });
+  
+  menu_item.forEach((item) => {
+    item.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobile_menu.classList.toggle('active');
+    });
+  });
+  
+  // contact form validation and other effects
+  
+  function validatenoblank()
+          {
+              var username=document.getElementById("uname");
+              var useremail=document.getElementById("uemail");
+              var usermessage=document.getElementById("umessage");
+              if(username.value.trim()=="")
+              {
+                  alert("Blank username");
+                  username.style.border="solid 1px #f8bd7f";
+                  return false;
+              }
+              else if(useremail.value.trim()=="")
+              {
+                  alert("Blank email");
+          useremail.style.border="solid 1px #f8bd7f";
+          username.style.border="solid 1px black";
+                  return false;
+              }
+              else if(usermessage.value.trim()=="")
+              {
+                  alert("Blank message");
+          usermessage.style.border="solid 1px #f8bd7f";
+          useremail.style.border="solid 1px black";
+                  return false;
+              }
+              else
+              {
+                  return true;
+              }
+          }
+          function validateemail()
+          {
+              var useremail=document.getElementById("uemail").value;
+              var regx=/^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+              if(regx.test(useremail))
+              {
+                  alert("Valid email");
+                  return true;
+              }
+              else
+              {
+                  alert("Invalid email");
+                  return false;
+              }
+  
+      }
+      </script>
+<script >
+  document.querySelector(".left").addEventListener('click',function(){
+  document.querySelector(".login").style.display='none';
+})
+</script>

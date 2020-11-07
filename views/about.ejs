@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="icon" type="image/svg" href="/assets/ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/about.css">
+</head>
+<body>
+        <div class="top">
+        <a href="/"><h1>Rozgaar</h1></a>
+        <h3>Rozgar is a humble app that aims to bring employment to the poorest of the poor of our country who don't have Whatsapp or Linkedin to search for jobs.</h3>
+        </div>
+        <div class="bottom">
+            <h2 class="section-title">About <span>Us</span></h2>
+            <p>We all know the plight of migrant labourers post-COVID-19.
+                A lot of the daily-wage-workers rushed to their homes in villages when the lockdown was instated. Now that these restrictions are being lifted, it's a real challenge for them to find employment. A lot of old businesses have been shut down and many others are running at a reduced capacity.<br><br>Employers have been hit really hard by a shortage of both skilled and unskilled workers. These employers can use our web app to provide the pin code of their home or workplace and their requirement(maid, labourer) etc. to search for relevant workers near them. The employers can then contact these workers and hire them. So there's a win-win situation for both the hiring and the hired.</p>
+        </div>
+
+       
+            <div class="footer">
+              <div class="brand"><h2>Rozgaar</h2></div>
+              
+              <p> Copyright © 2020 Rozgaar. All rights reserved</p>
+            </div>
+
+            <script>
+                
+            var para= document.querySelector('p');
+            var head= document.querySelector('h2');
+
+            document.addEventListener('scroll', () => {
+                var scroll_position = window.scrollY;
+                if (scroll_position > 200) {
+                    head.style.opacity = "0.9";
+                    head.style.transition="0.3s";
+                    para.style.opacity = "0.9";
+                    para.style.transition="1.2s";
+
+                } 
+                else if (scroll_position < 250){
+                    head.style.opacity = "0";
+                    head.style.transition="0.1s";
+                    para.style.opacity = "0";
+                    para.style.transition="1.2s";
+
+                } 
+               
+            });
+        
+            </script>
+</body>
+</html>

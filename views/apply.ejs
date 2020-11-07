@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/apply.css" rel="stylesheet">
+    </head>
+    <body onload="load()">
+        <div class="container">
+            <div class="left">
+                <a href=""><p>Rozgaar</p></a>
+                <img src="/assets/garib2.jpg" alt="">
+            </div>
+
+            <div class="right">
+                
+                <h2>Apply for a Job</h2>
+                <div class="form">
+                    
+                    <form action="/search/<%= job._id %>/applied" method="POST">
+                        <input type="text" name="applicant[name]" placeholder="Name"><br><br>
+                        <input type="text" name="applicant[age]" placeholder="Age"><br><br>
+                        <input type="text" name="applicant[city]" placeholder="City"><br><br>
+                        <input type="text" name="applicant[contact]" placeholder="Contact No"><br><br>
+                        <button>Submit</button>
+                    </form>
+                   
+                </div>
+                
+            </div>
+            
+           
+        </div>
+    </body>
+</html>

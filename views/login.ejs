@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+    <link rel="stylesheet" href="/css/login.css">
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+	
+</head>
+
+
+<body>
+	<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+		<path fill="#FF0066" d="M60.2,-50.3C69.9,-36,63.8,-11.4,55.3,7.4C46.9,26.3,36.1,39.4,20.2,50.1C4.4,60.8,-16.4,69.1,-34.1,63.4C-51.7,57.7,-66.1,38.1,-72.5,15.1C-78.9,-7.9,-77.3,-34.1,-63.9,-49.2C-50.4,-64.4,-25.2,-68.4,0,-68.5C25.3,-68.5,50.6,-64.5,60.2,-50.3Z" transform="translate(00 00)" />
+	  </svg>
+  <div class="wrapper">
+  <div class="left">
+    <a href="index.html"> <h3>Rozgaar</h3>  </a>
+    <img src="/assets/232.svg" alt="">
+  </div>
+  <div class="right">
+    <div class="tabs">
+      <ul>
+        <li class="register_li">Login</li>
+        
+      </ul>
+    </div>
+    
+    <form action= "/login" method="POST" ng-app="myApp"  ng-controller="validateCtrl" name="myForm" novalidate>
+    <div class="register">
+      <div class="input_field">
+        <input type="text" name="username" ng-model="user" required placeholder="Username" class="input">
+        <br>
+        <span style="color:#5e462c " ng-show="myForm.user.$dirty && myForm.user.$invalid">
+        <span ng-show="myForm.user.$error.required">*Username is required.</span>
+        </span>
+       
+      </div>
+     
+      <div class="input_field">
+        <input type="password" name="password" ng-model="password" required placeholder="Password" class="input">
+        <br>
+        <span style="color:#5e462c " ng-show="myForm.password.$dirty && myForm.password.$invalid">
+        <span ng-show="myForm.password.$error.required"><i>*Password is required.</i></span>
+        </span>
+      
+      </div>
+      <input type="submit"  class="btn" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||
+      myForm.email.$dirty && myForm.email.$invalid || myForm.password.$dirty && myForm.password.$invalid ">
+    </div>
+
+<!------------------------------------SECOND FORM-------------------------------------------------------->
+
+    </form>
+   
+  </div>
+
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('validateCtrl', function($scope) {
+      $scope.user = 'Username';
+      $scope.password = 'abc123*#@?';
+    });
+</script>
+
+
+
+</div>
+</body>
+</html>

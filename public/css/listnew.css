@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+    font-family: 'open sans';
+    background-color: #f2f2f0;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+    
+}
+
+h2{
+    color: #ff5e3a;
+    position: absolute;
+    text-transform: uppercase;
+    left: 34%;
+    top: 2%;
+}
+
+
+.container{
+    position: absolute;
+    width: 70%;
+    height: 85%;
+    margin-top: 3.5%;
+    margin-left: 15%;
+    background: white;
+    box-shadow: 0 8px 26px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.container:hover{
+    box-shadow: 0 8px 126px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.left{
+    margin-left: 0;
+    width: 50%;
+    height: 100%;
+    background: #272e4f;
+    transition: 1s;
+    
+}
+
+img{
+    background-repeat: no-repeat;
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+.right{
+    position: inherit;
+    top: 0%;
+    margin-left: 50%;
+    width: 50%;
+    height: 100%;
+}
+
+form{
+    margin-top: 12%;
+    margin-left: 13%;
+}
+
+select{
+    width:78%;
+    padding: 4%;
+    border: none;
+    outline: none;
+    font-family: 'open sans', sans-serif;
+    color: #7a7b7c;
+    background-color:transparent;
+    border-bottom: 1px solid #d7d8db;
+}
+
+option{
+    background-color: #272e4f;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+input{
+    font-family: 'open sans', sans-serif;
+    background-color:transparent;
+    padding: 4%;
+    outline: none;
+    width:70%;
+    border: none;
+    border-bottom: 1px solid #d7d8db;
+}
+
+#submit{
+    padding: 1.5%;
+    font-family: 'open sans', sans-serif;
+    color: #272e4f;
+    transition: 0.5s;
+}
+
+#submit:hover{
+    font-family: 'open sans', sans-serif;
+    color: #ff5e3a;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+textarea{
+    font-family: 'open sans', sans-serif;
+    padding: 4%;
+    outline: none;
+}
+button{
+    border-radius: 25px;
+    border: 1px solid #2c365d;
+    background-color: transparent;
+    color: #2c365d;
+    width: 40%;
+    outline: none;
+    margin-left:20% ;
+    font-family: 'open sans', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 2%;
+}
+
+button:hover{
+    background-color:#272e4f;
+    color: #f2f2f0;
+    transition: 0.3s;
+}
+
+p{
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #f8f8f4;
+    font-weight: 500;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+}
+
+a p:hover{
+    cursor: pointer;
+}

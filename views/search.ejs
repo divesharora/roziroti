@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="icon" type="image/svg" href="/assets/ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/search.css">
+    <link rel="stylesheet" type="text/css" href="/css/card.css">
+</head>
+<body>
+
+    <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/#hero"><h1><span>Rozgaar</h1></a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger"><div class="bar"></div></div>
+          <ul>
+            <li><a href="/#hero"  data-after="Home" style="color: #f8bd7f;">Home</a></li>
+            <li><a href="/#services"  data-after="Service">Services</a></li>
+            <li><a href="/search"  data-after="Projects">search</a></li>
+            <li><a href="/about"  data-after="About">About</a></li>
+            <li><a href="/#contact"  data-after="Contact">Contact</a></li>
+            <% if(!currentUser){ %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Signup</a></li>
+              <%	} else { %>
+              <li><a href="/dash">Dashboard</a></li>
+              <%	} %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loginss">
+    <div class="logins container">
+    <form action="/search/result" method="POST">
+      <select name="job" id="" required >
+        <option value="none" selected disabled hidden>Select from the following Job</option>
+        <option value="Maid">Maid</option>
+        <option value="Sweeper">Sweeper</option>
+        <option value="Plumber">Plumber</option>
+        <option value="Driver">Driver</option>
+        <option value="Daily wage">Daily wage</option>
+        <option value="electrician">Electrician</option>
+        <option value="Cook">Cook</option>
+    </select>
+    <input type="text" placeholder="Pincode" class="pin" required name="pin"><br>
+
+    <input id="submit" type="button"  value="Get pincode for my Location">
+    <br><button>Submit</button>
+    </form>
+    
+    </div>
+    <div style="width:90%;margin-left:5% ;margin-right: auto; ">
+      <ul>
+        <% jobs.forEach
+        (function(job){
+          var pic;
+          if(job.jname=="Maid")
+          pic='maid.jpg';
+          else if(job.jname=="Sweeper")
+          pic='sweeper.png';
+          else if(job.jname=="Plumber")
+          pic='plumber.jpg';
+          else if(job.jname=="Driver")
+          pic='driver.jpg';
+          else if(job.jname=="electrician")
+          pic='elec.jpg';
+          else if(job.jname=="Cook")
+          pic='cook.jpg';
+          else 
+          pic='daily.jpg';
+
+          %>
+        <li class="booking-card" style="background-image: url(/assets/<%= pic %>);">
+          <div class="book-container">
+            <div class="content">
+              <a type='button' class="btn" href="/search/<%= job._id %>/apply" >Apply</a>
+            
+            </div>
+          </div>
+          <div class="informations-container">
+            <h2 class="title"> <%=job.jname%></h2>
+            <p class="sub-title">Location:<%=job.location%></p><p>Gender:Male</p>
+            <p>Salary:<%=job.salary%> </p>
+            <p class="price">
+            <div class="more-information">
+              <p class="sub-title">Pincode: <%=job.pincode%></p>
+              <p class="disclaimer"><%=job.description%></p>
+              </div>
+          </div>
+        </li>
+    
+        <%
+      });%>
+    </ul>
+    </div>
+
+ 
+  </section>
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand"><h1>Rozgaar</h1></div>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png"/></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png"/></a>
+        </div>
+      </div>
+      <p>Copyright © 2020 Rozgaar. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxvl5v_gGdLkoiew7rYCR8d4i4yr-vtsY&callback=initMap">
+        </script>
+        <script>
+                const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+                const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+                const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+                const header = document.querySelector('.header.container');
+
+                hamburger.addEventListener('click', () => {
+                  hamburger.classList.toggle('active');
+                  mobile_menu.classList.toggle('active');
+                });
+
+                document.addEventListener('scroll', () => {
+                  var scroll_position = window.scrollY;
+                  if (scroll_position > 100) {
+                    header.style.backgroundColor = '#272343';
+                    header.style.opacity = "0.98"
+                  } else {
+                        header.style.backgroundColor = '#272343';
+                        header.style.opacity = "1.0"
+                  }
+                });
+
+                menu_item.forEach((item) => {
+                  item.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    mobile_menu.classList.toggle('active');
+                  });
+                });
+
+            document.getElementById("submit").disabled=true;
+
+                var y,z;
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition,showError);
+                    } 
+                    else {
+                        x.innerHTML = "Geolocation is not supported by this browser.";
+                    }
+                }
+                function showPosition(position) {
+                    
+                
+                    y=position.coords.latitude;
+                    z=position.coords.longitude;
+
+                    document.getElementById("submit").disabled=false;
+                }
+                getLocation();
+
+                function showError(error) {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    document.querySelector('.pin').setAttribute('placeholder','Please Enter the Pincode');
+                    document.querySelector('#submit').style.display="none";
+                    break;
+                    case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                    case error.TIMEOUT:
+                    alert("The request to get user location timed out.")
+                    break;
+                    case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+                }
+                }
+                    function initMap() {
+                        var geocoder = new google.maps.Geocoder;
+                        var infowindow = new google.maps.InfoWindow;
+
+                        document.getElementById('submit').addEventListener('click', function() {
+                        geocodeLatLng(geocoder);
+                        });
+                    }
+
+                    function geocodeLatLng(geocoder,) {
+                        var latlng = {lat: parseFloat(y), lng: parseFloat(z)};
+                        geocoder.geocode({'location': latlng}, function(results, status) {
+                        if (status === 'OK') {
+                            displayPostcode(results[0].address_components);
+                        } else {
+                            window.alert('Geocoder failed due to: ' + status);
+                        }
+                        });
+                    }
+
+
+                function displayPostcode(address) {
+                for (p = address.length-1; p >= 0; p--) {
+                    if (address[p].types.indexOf("postal_code") != -1) {
+                    document.querySelector('.pin').setAttribute('value',address[p].long_name);
+                    }
+                }
+                }
+
+        </script>
+</body>
+</html>
