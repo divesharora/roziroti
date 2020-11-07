@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "name": "Form",
+  "description": "A file simple example manifest.webapp",
+  "type": "web",
+    "cursor":true,
+  "launch_path": "/form.html",
+  "developer": {
+    "name": "Your Name",
+    "url": "http://yourawesomeapp.com"
+  },
+   "icons": {
+    "56": "/icon.png",
+     "128": "/icon.png"
+  },
+    
+    
+  "type": "privileged",
+  "permissions": {
+    "spatialnavigation-app-manage": {
+      "navigator.spatialNavigationEnabled": true
+    }
+    
+  },
+    "ime_default_softkey_bar":true,
+  "locales": {
+    "en-US": {
+      "name": "KaiOS App",
+      "subtitle": "Short description for the user",
+      "description": "Brief description of your app"
+    }
+  },
+    "permissions": {
+  "mobiledata":{},
+  "wifidata":{},
+  "calllog":{}
+},
+  "default_locale": "en-US"
+}
