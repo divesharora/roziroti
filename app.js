@@ -36,8 +36,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(bodyparser.urlencoded({extended:true}));
-
-app.listen(3500,process.env.IP,function(){
+var port=process.env.PORT || 3500;
+app.listen(port,process.env.IP,function(){
 	console.log("server started.");
 });
 
