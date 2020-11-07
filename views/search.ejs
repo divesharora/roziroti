@@ -17,7 +17,7 @@
     <div class="header container">
       <div class="nav-bar">
         <div class="brand">
-          <a href="/#hero"><h1><span>Rozgaar</h1></a>
+          <a href="/#hero"><h1><span>RoziRoti</h1></a>
         </div>
         <div class="nav-list">
           <div class="hamburger"><div class="bar"></div></div>
@@ -54,7 +54,7 @@
     </select>
     <input type="text" placeholder="Pincode" class="pin" required name="pin"><br>
 
-    <input id="submit" type="button"  value="Get pincode for my Location">
+    <input id="submit" type="button"  value="Get pincode for my Location" onclick="load()">
     <br><button>Submit</button>
     </form>
     
@@ -110,7 +110,7 @@
   <!-- Footer -->
   <section id="footer">
     <div class="footer container">
-      <div class="brand"><h1>Rozgaar</h1></div>
+      <div class="brand"><h1>RoziRoti</h1></div>
       <div class="social-icon">
         <div class="social-item">
           <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png"/></a>
@@ -125,7 +125,7 @@
           <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png"/></a>
         </div>
       </div>
-      <p>Copyright © 2020 Rozgaar. All rights reserved</p>
+      <p>Copyright © 2020 RoziRoti. All rights reserved</p>
     </div>
   </section>
   <!-- End Footer -->
@@ -163,73 +163,24 @@
                   });
                 });
 
-            document.getElementById("submit").disabled=true;
-
-                var y,z;
-                function getLocation() {
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(showPosition,showError);
-                    } 
-                    else {
-                        x.innerHTML = "Geolocation is not supported by this browser.";
-                    }
+                var api = "https://fcc-weather-api.glitch.me/api/current?"; 
+            function load(){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        getLocation();
+                    });
                 }
-                function showPosition(position) {
-                    
-                
-                    y=position.coords.latitude;
-                    z=position.coords.longitude;
-
-                    document.getElementById("submit").disabled=false;
+                else{
+                    alert('Browser not supported');
                 }
-                getLocation();
+            }
 
-                function showError(error) {
-                switch(error.code) {
-                    case error.PERMISSION_DENIED:
-                    alert("User denied the request for Geolocation.");
-                    document.querySelector('.pin').setAttribute('placeholder','Please Enter the Pincode');
-                    document.querySelector('#submit').style.display="none";
-                    break;
-                    case error.POSITION_UNAVAILABLE:
-                    alert("Location information is unavailable.");
-                    break;
-                    case error.TIMEOUT:
-                    alert("The request to get user location timed out.")
-                    break;
-                    case error.UNKNOWN_ERROR:
-                    alert("An unknown error occurred.");
-                    break;
+            function getLocation() {
+                $.get("https://ipinfo.io?token=728a197543471f", function(response) {
+                    document.querySelector('.pin').setAttribute('value',response.postal);
+                }, "jsonp")
                 }
-                }
-                    function initMap() {
-                        var geocoder = new google.maps.Geocoder;
-                        var infowindow = new google.maps.InfoWindow;
 
-                        document.getElementById('submit').addEventListener('click', function() {
-                        geocodeLatLng(geocoder);
-                        });
-                    }
-
-                    function geocodeLatLng(geocoder,) {
-                        var latlng = {lat: parseFloat(y), lng: parseFloat(z)};
-                        geocoder.geocode({'location': latlng}, function(results, status) {
-                        if (status === 'OK') {
-                            displayPostcode(results[0].address_components);
-                        } else {
-                            window.alert('Geocoder failed due to: ' + status);
-                        }
-                        });
-                    }
-
-
-                function displayPostcode(address) {
-                for (p = address.length-1; p >= 0; p--) {
-                    if (address[p].types.indexOf("postal_code") != -1) {
-                    document.querySelector('.pin').setAttribute('value',address[p].long_name);
-                    }
-                }
-                }
 
         </script>
 </body>

@@ -84,7 +84,7 @@ option{
 input{
     font-family: 'open sans', sans-serif;
     background-color:transparent;
-    padding: 4%;
+    padding: 3%;
     outline: none;
     width:70%;
     border: none;
@@ -92,7 +92,6 @@ input{
 }
 
 #submit{
-    padding: 1.5%;
     font-family: 'open sans', sans-serif;
     color: #272e4f;
     transition: 0.5s;

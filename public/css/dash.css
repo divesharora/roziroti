@@ -4,6 +4,13 @@ body{
   font-family: "open sans", sans-serif;
 }
 
+.lj{
+  text-align: center;
+  color:#ff5e3a;
+  text-transform: uppercase;
+  margin-top: 3%;
+  font-weight: 700;
+}
 .sidebar{
   z-index: 1;
   top: 0;
@@ -36,7 +43,7 @@ body{
 .sidebar .profile_info h4{
   color: #ccc;
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
 }
 
 .sidebar p{
@@ -119,7 +126,7 @@ label #sidebar_btn:hover{
 
 /* Responsive CSS */
 
-@media screen and (max-width: 780px){
+@media screen and (max-width: 700px){
   .sidebar{
     display: none;
   }
@@ -146,9 +153,9 @@ label #sidebar_btn:hover{
   }
 
   .nav_bar{
-    background: #222;
+    background: #272343;
     width: (100% - 0px);
-    margin-top: 70px;
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,7 +170,7 @@ label #sidebar_btn:hover{
 
   .nav_bar .nav_btn{
     color: #fff;
-    font-size: 22px;
+    font-size: 25px;
     cursor: pointer;
     transition: 0.5s;
     transition-property: color;
@@ -174,7 +181,7 @@ label #sidebar_btn:hover{
   }
 
   .mobile_nav_items{
-    background: #2F323A;
+    background: #272343;
     display: none;
   }
 
@@ -191,7 +198,7 @@ label #sidebar_btn:hover{
   }
 
   .mobile_nav_items a:hover{
-    background: #19B3D3;
+    background: #ea5455;
   }
 
   .mobile_nav_items i{
@@ -202,4 +209,27 @@ label #sidebar_btn:hover{
     display: block;
   }
 }
-           
+   
+
+/*custom scroll bar */
+body::-webkit-scrollbar {
+  background-color: #a5d1d1;
+  width: 10px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+  background-color:none;
+}
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+background: #ea5455;
+transition: 12s;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background:#272343; 
+border: 1px;
+transition: 2.5s;
+}
+/*custom scroll bar ends here  */

@@ -53,7 +53,7 @@
     <!--sidebar end-->
 
     <div class="content">
-      <h2 class="lj">Listed Jobs</h2>
+      <h2 class="lj">Delete Listed Jobs</h2>
       <div style="width:90%;margin-left:5% ;margin-right: auto; ">
         <ul>
           <% jobs.forEach(function(job){
@@ -77,7 +77,7 @@
           <li class="booking-card" style="background-image: url(/assets/<%= pic %>);">
             <div class="book-container">
               <div class="content1">
-                <a type='button' class="btn" href="/dash/<%= job._id %>/applicants" style="text-decoration: none;">View Applicants</a>
+                <a type='button' class="btn" href="/dash/<%= job._id %>/deleted" style="text-decoration: none;">Delete Job</a>
               
               </div>
             </div>

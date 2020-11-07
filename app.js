@@ -63,13 +63,34 @@ app.get('/dash',function(req,res){
 		else
 		{
 			res.render("dash.ejs",{currentUser:req.user,jobs:jobs});
-			console.log(jobs);
 		}
 		
 
 	})
     
 });
+
+app.get('/delete',function(req,res){
+	Job.find({userid:req.user._id},function(err,jobs){
+		if(err)
+		console.log(err)
+		else
+		{
+			res.render("delete.ejs",{currentUser:req.user,jobs:jobs});
+		}
+		
+
+	})
+});
+
+app.get('/dash/:id/deleted',function(req,res){
+		Job.remove({_id:req.params.id},function(err,result){
+			res.render('deleted.ejs',{currentUser:req.user});
+		});
+		
+	});
+
+
 app.post("/register",function(req,res){
 	var newUser= new User({username:req.body.username,email:req.body.email});
 	User.register(newUser,req.body.password,function(err,user){
