@@ -10,6 +10,7 @@ var Job=require('./models/job.js');
 var Applicant=require('./models/applicant.js');
 var nodemailer = require('nodemailer');
 
+//fggfgf
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
