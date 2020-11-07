@@ -69,6 +69,7 @@ background:#272e4f;
 	width: 70%;
 	height: 100%;
 	background-color:#f2f2f0;
+	overflow: scroll;
 }
 
 table{
@@ -115,3 +116,28 @@ button:hover{
 	cursor: pointer;
 	outline: none;
 }
+  
+
+/*custom scroll bar */
+.right::-webkit-scrollbar {
+	background-color: #a5d1d1;
+	width: 10px;
+  }
+  
+  /* background of the scrollbar except button or resizer */
+  .right::-webkit-scrollbar-track {
+	background-color:none;
+  }
+  /* scrollbar itself */
+  .right::-webkit-scrollbar-thumb {
+  background: #ea5455;
+  transition: 12s;
+  }
+  
+  .right::-webkit-scrollbar-thumb:hover {
+	background:#272343; 
+  border: 1px;
+  transition: 2.5s;
+  }
+  /*custom scroll bar ends here  */
+  

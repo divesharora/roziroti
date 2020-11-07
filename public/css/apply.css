@@ -106,3 +106,28 @@ p{
 a p:hover{
     cursor: pointer;
 }
+  
+
+/*custom scroll bar */
+body::-webkit-scrollbar {
+    background-color: #a5d1d1;
+    width: 10px;
+  }
+  
+  /* background of the scrollbar except button or resizer */
+  body::-webkit-scrollbar-track {
+    background-color:none;
+  }
+  /* scrollbar itself */
+  body::-webkit-scrollbar-thumb {
+  background: #ea5455;
+  transition: 12s;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background:#272343; 
+  border: 1px;
+  transition: 2.5s;
+  }
+  /*custom scroll bar ends here  */
+  
