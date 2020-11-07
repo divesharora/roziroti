@@ -1,17 +1,16 @@
 {
   "version": "1.0.0",
-  "name": "Form",
-  "description": "A file simple example manifest.webapp",
+  "name": "Rozi Roti",
+  "description": "We all know the plight of migrant labourers post-COVID-19. A lot of the daily-wage-workers rushed to their homes in villages when the lockdown was instated. Now that these restrictions are being lifted, it's a real challenge for them to find employment. A lot of old businesses have been shut down and many others are running at a reduced capacity. Workers can use their simple 2G Feature Phones to register themselves on a nationwide database of workers actively seeking for employment by just sending a message.",
   "type": "web",
     "cursor":true,
-  "launch_path": "/form.html",
+  "launch_path": "/index.html",
   "developer": {
-    "name": "Your Name",
-    "url": "http://yourawesomeapp.com"
+    "name": "Team Seal"
   },
    "icons": {
-    "56": "/icon.png",
-     "128": "/icon.png"
+    "56": "/logo.png",
+     "128": "/logo.png"
   },
     
     
@@ -25,9 +24,9 @@
     "ime_default_softkey_bar":true,
   "locales": {
     "en-US": {
-      "name": "KaiOS App",
+      "name": "Rozi Roti",
       "subtitle": "Short description for the user",
-      "description": "Brief description of your app"
+      "description": "We all know the plight of migrant labourers post-COVID-19. A lot of the daily-wage-workers rushed to their homes in villages when the lockdown was instated. Now that these restrictions are being lifted, it's a real challenge for them to find employment. A lot of old businesses have been shut down and many others are running at a reduced capacity. Workers can use their simple 2G Feature Phones to register themselves on a nationwide database of workers actively seeking for employment by just sending a message."
     }
   },
     "permissions": {
