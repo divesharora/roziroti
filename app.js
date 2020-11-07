@@ -9,7 +9,7 @@ var User=require('./models/user');
 var Job=require('./models/job.js');
 var Applicant=require('./models/applicant.js');
 var nodemailer = require('nodemailer');
-
+var sms=require('fast-two-sms');
 
 
 var transporter = nodemailer.createTransport({
@@ -287,7 +287,7 @@ app.get("/dash/:id/applicants",function(req,res){
 								  console.log('Email sent: ' + info.response);
 								}
 							  });
-
+                          sms.sendMessage({authorization:'GgW7u1MrzXodYEpKCxyt3wImQ0b8JPvZjLin92TDHSaVO4A5hBt9Fu3c8Id0k7QCEM4jpN2vVomRqbzx',sender_id:'RoziRoti',message:'Hey '+applicant.name+ ' ,Thanks for applying on RoziRoti!',numbers:[applicant.contact]});
 								
 							res.render('mapplied.ejs',{currentUser:req.user})
 						}
