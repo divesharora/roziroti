@@ -10,22 +10,30 @@ var Job=require('./models/job.js');
 var Applicant=require('./models/applicant.js');
 var nodemailer = require('nodemailer');
 var sms=require('fast-two-sms');
+require('dotenv').config();
+var npass=process.env.NODEMAILER_PASS;
+var uri=process.env.MONGODB_URI;
+var ss=process.env.EXPRESS_KEY;
 
 
 var transporter = nodemailer.createTransport({
 	service: 'gmail',
 	auth: {
 	  user: 'rozgaar833@gmail.com',
-	  pass: 'padhyop123'
+	  pass: npass
 	}
   });
 
-mongoose.connect("mongodb+srv://rozgar:bashaop@cluster0.77gno.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true , useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true , useUnifiedTopology: true })
+.then(() => 
+console.log("Database is connected!"))
+
+.catch((err) => console.error(err))
 
 app.use(express.static(path.join(__dirname, '/public')));
 //passport config
 app.use(require("express-session")({
-	secret:"jai shree ram",
+	secret:ss,
 	resave:false,
 	saveUninitialized: false
 }));
@@ -287,7 +295,7 @@ app.get("/dash/:id/applicants",function(req,res){
 								  console.log('Email sent: ' + info.response);
 								}
 							  });
-                          sms.sendMessage({authorization:'GgW7u1MrzXodYEpKCxyt3wImQ0b8JPvZjLin92TDHSaVO4A5hBt9Fu3c8Id0k7QCEM4jpN2vVomRqbzx',sender_id:'SMSIND',message:'Hey '+applicant.name+ ' ,Thanks for applying for the job:'+job.jname+' on RoziRoti!. The employer will get in touch with you shortly.',numbers:[applicant.contact]});
+                          sms.sendMessage({authorization:process.env.F2_KEY,sender_id:'SMSIND',message:'Hey '+applicant.name+ ' ,Thanks for applying for the job:'+job.jname+' on RoziRoti!. The employer will get in touch with you shortly.',numbers:[applicant.contact]});
 								
 							res.render('mapplied.ejs',{currentUser:req.user})
 						}
